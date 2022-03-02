@@ -10,7 +10,7 @@
                          <div class="pt-4 animate__animated animate__fadeIn">
                             <h1>Películas y una gran variedad de contenido</h1>
                             <p>Mira nuestra gran variedad de contenido y disfruta de todo lo que podemos ofrecer</p>
-                            <input type="text" class="form-control search-input" placeholder="Buscar Pelicula...">
+                            <input  type="text" class="form-control search-input" placeholder="Buscar Pelicula...">
                             <div *ngIf="movieDescription" class="mt-2 animate__animated animate__fadeIn">
                                  <div class="movie-description pt-4">
                                    <h1 class="d-flex justify-content-between mb-3"><span>{{movieDescription.title}}</span> <span>{{movieDescription.vote_average}} <i class="fas fa-star"></i></span></h1>
@@ -29,14 +29,14 @@
             </div>
             <div class="col-md-6 mt-5">
                 <div class="movies mt-5 d-flex flex-wrap ps-5">
-                    <h1 class="mb-5">Explorar</h1>
-                    <div *ngFor="let movie of movies" class="card movie col-md-9 mb-5 animate__animated animate__fadeIn" (mouseover)="setMovieDescription(movie.id)">
+                    <h1 class="mb-5" id="explorar">Explorar</h1>
+                    <div *ngFor="let movie of movies" class="card movie col-md-9 mb-4 animate__animated animate__fadeIn" (mouseenter)="setMovieDescription(movie.id)">
                         <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path" class="card-img-top" alt="...">
                         <div class="card-body text-white p-4">
                           <div class="d-flex justify-content-between">
                               <div>
                                 <h5 class="card-title mb-0"><i class="fas fa-play"></i> {{movie.title}}</h5>
-                                <p class="ms-4 mt-0 text-muted movie-details-txt">2h 28m  - {{movie.release_date | date}}</p>
+                                <p class="mt-4 mb-2 text-muted movie-details-txt">2h 28m  - {{movie.release_date | date}}</p>
                               </div>
                               <div>
                                   <p>{{movie.vote_average}} <i class="fas fa-star"></i></p>
@@ -47,6 +47,15 @@
                           <button class="btn-download ms-2 mt-3">Download <i class="fas fa-download"></i></button>
                         </div>
                       </div>   
+                      <nav aria-label="Page navigation pb-4" style="width: 100%;">
+                        <ul class="pagination ms-2 pb-3">
+                          <li *ngIf="page>1" (click)="paginate(page-1)" class="page-item disabled"> <a (click)="$event.preventDefault()" class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+                          <li *ngIf="page>1" (click)="paginate(page-1)" class="page-item"><a (click)="$event.preventDefault()" class="page-link" href="#">{{page-1}}</a></li>
+                          <li class="page-item active"><a (click)="$event.preventDefault()" class="page-link" href="#">{{page}}</a></li>
+                          <li class="page-item" (click)="paginate(page+1)"><a (click)="$event.preventDefault()" class="page-link" href="#">{{page+1}}</a></li>
+                          <li class="page-item" (click)="paginate(page+1)" > <a (click)="$event.preventDefault()" class="page-link" href="#explorar"><i class="fas fa-chevron-right"></i></a> </li>
+                        </ul>
+                      </nav>
                 </div>
             </div>
         </div>

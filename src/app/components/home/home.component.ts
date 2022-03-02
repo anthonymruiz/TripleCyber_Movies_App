@@ -31,6 +31,13 @@ export class HomeComponent implements OnInit {
   }
   setMovieDescription(id: number){
     this.movieDescription = undefined;
-    this.movieDescription = this.movies.find((movie: Movie) => movie.id == id);
+    setTimeout(() => {
+      this.movieDescription = this.movies.find((movie: Movie) => movie.id == id);
+    }, 100);
+   
+  }
+  paginate(page: number){
+    this.page = page;
+    this.list(page)
   }
 }
