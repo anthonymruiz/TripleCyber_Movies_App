@@ -1,0 +1,60 @@
+.main{ 
+    background-color: #050a1e;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 105%;
+    animation-duration: 10s;
+    animation-name: moverBg;
+}
+.main h1{
+    color: white;
+    font-size: 45px;
+}
+.main p{
+    color: white;
+    font-size: 18px;
+    width: 50%;
+}
+@keyframes moverBg {
+    from {
+      background-size: 100%;
+    }
+  
+    to {
+        background-size: 103%;
+    }
+  }
+.overlay{ 
+    min-height: 100vh;
+    background: rgb(5,10,30); 
+    background: linear-gradient(66deg, rgba(5,10,30,0.6502976190476191) 0%, rgba(5,10,30,0.48503151260504207) 60%, rgba(5,10,30,0) 84%);
+}
+.content{
+    height: 100vh;
+}
+.btn-movie{
+    padding: 8px 30px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    transition: 0.5s; 
+}
+ 
+.btn-download{
+    padding: 8px 30px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    border: 1px solid #b80505;
+    border-radius: 20px;
+    color: #b80505;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.btn-download:hover{
+    border: 1px solid #db1717; 
+    color: #db1717; 
+}
