@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '',       component: HomeComponent, pathMatch: 'full' }, 
   { path: 'index',  component: HomeComponent, pathMatch: 'full' },  
   { path: 'movies', component: HomeComponent, pathMatch: 'full' },  
-  { path: 'movies/detail', component: DetailComponent, pathMatch: 'full' },  
+  { path: 'movies/detail/:id', component: DetailComponent, pathMatch: 'full' },  
   { path: "**",     component:  HomeComponent}
 ];
 

@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ToShortOverviewPipe } from './pipes/to-short-overview.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SliderComponent } from './components/slider/slider.component';
     HomeComponent,
     NavbarComponent,
     DetailComponent,
-    SliderComponent
+    SliderComponent,
+    ToShortOverviewPipe
   ],
   imports: [
     BrowserModule,

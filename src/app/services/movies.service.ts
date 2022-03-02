@@ -18,11 +18,10 @@ export class MoviesService {
      
     return this.http.get<any>(`${environment.API_URL}/movie/top_rated`, {params});
   }
-  getMovie(id:number, page:number){
+  getMovie(id:number){
     const params = new HttpParams()
     .set("api_key", environment.API_KEY)
-    .set("language", 'en-US')
-    .set("page", page)
+    .set("language", 'en-US') 
      
     return this.http.get<any>(`${environment.API_URL}/movie/${id}`, {params});
   }

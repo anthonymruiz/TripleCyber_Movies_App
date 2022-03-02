@@ -5,6 +5,7 @@
     background-size: 105%;
     animation-duration: 10s;
     animation-name: moverBg;
+    background-size: cover;
 }
 .main h1{
     color: white;
@@ -22,6 +23,15 @@
   
     to {
         background-size: 103%;
+    }
+  }
+  @keyframes moverBgSmall {
+    from {
+      background-size: cover;
+    }
+  
+    to {
+        background-size: calc(cover + 20%);
     }
   }
 .overlay{ 
@@ -57,4 +67,35 @@
 .btn-download:hover{
     border: 1px solid #db1717; 
     color: #db1717; 
+}
+.btn-back{
+    background-color: transparent;
+    color: rgb(221, 221, 221);
+    font-size: 50px;
+    border: none;
+    transition: 0.5s;
+    position: absolute;
+    top: 1.5rem;
+    z-index: 200;
+}
+.btn-back:hover{ 
+    color: white;
+}
+@media (max-width: 1000px){
+ 
+    .main{
+        animation-name: moverBgSmall;
+    }
+    .overlay{
+        padding: 1rem 1rem;
+    }
+    .overlay p{
+        width:100%
+    }
+    .content{
+        align-content: end;
+    }
+}
+@media (max-width: 800px){
+
 }

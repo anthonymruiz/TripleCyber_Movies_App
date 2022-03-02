@@ -26,6 +26,7 @@
 .movie .description{
     color: #aeb3c7;
 }
+
 .btn-movie{
     padding: 8px 30px;
     border: none;
@@ -51,6 +52,17 @@
     font-weight: bold;
     transition: 0.5s;
 }
+.btn-ver{
+    padding: 8px 30px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    border: 1px solid #b80505;
+    border-radius: 20px;
+    color: #b80505;
+    font-weight: bold;
+    transition: 0.5s;
+}
 .btn-download:hover{
     border: 1px solid #db1717; 
     color: #db1717; 
@@ -59,15 +71,15 @@
     color: white;
 }
 .search-box h1{
-    margin-bottom: 3rem;
-    font-size: 50px;
+    margin-bottom: 2rem;
+    font-size: 45px;
 }
 .search-box p{
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: 30px; 
     font-size: 1.625rem;
     font-weight: 400;
-    margin-top: 6rem;
+    margin-top: 3rem;
 }
 .search-input{
     background-color: transparent;
@@ -79,4 +91,10 @@
 }
 .search-input:focus{
     border: #b80505 !important;
+}
+.movie-description h1{
+    font-size: 22px
+}
+.movie-description p{
+    font-size: 1rem;
 }
