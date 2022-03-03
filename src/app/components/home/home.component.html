@@ -10,7 +10,7 @@
                          <div class="pt-4 animate__animated animate__fadeIn">
                             <h1>Películas y una gran variedad de contenido</h1>
                             <p>Mira nuestra gran variedad de contenido y disfruta de todo lo que podemos ofrecer</p>
-                            <input  type="text" class="form-control search-input" placeholder="Buscar Pelicula...">
+                            <input (keyup)="search()" [(ngModel)]="busqueda" type="search" class="form-control search-input" placeholder="Buscar Pelicula...">
                             <div *ngIf="movieDescription" class="mt-2 animate__animated animate__fadeIn">
                                  <div class="movie-description pt-4">
                                    <h1 class="d-flex justify-content-between mb-3"><span>{{movieDescription.title}}</span> <span>{{movieDescription.vote_average}} <i class="fas fa-star"></i></span></h1>

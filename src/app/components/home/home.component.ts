@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   pages: number = 0;
   total: number = 0;
+  busqueda: any;
   movies: Movie[] = [];
   movieDescription: Movie | undefined;
 
@@ -38,6 +39,13 @@ export class HomeComponent implements OnInit {
   }
   paginate(page: number){
     this.page = page;
+    this.busqueda = "";
     this.list(page)
+  }
+  search(){  
+    this.moviesService.getMovies(this.page).subscribe((movies:any)=> { 
+      this.movies = movies['results'];
+      this.movies = this.movies.filter( movie => movie.title.toLocaleLowerCase().includes(this.busqueda.toLocaleLowerCase()));
+    })
   }
 }
